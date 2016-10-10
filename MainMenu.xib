@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="Voe-Tx-rLC" id="GzC-gU-4Uq"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Mapper" customModuleProvider="target">
+            <connections>
+                <outlet property="drawingView" destination="tAK-xI-H6B" id="cKT-DS-RER"/>
+                <outlet property="view" destination="N8p-4p-bHu" id="9wO-kp-cLA"/>
+                <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+            <items>
+                <menuItem title="Tester" id="1Xt-HY-uBw">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Tester" systemMenu="apple" id="uQy-DD-JDr">
+                        <items>
+                            <menuItem title="About Tester" id="5kV-Vb-QxS">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="orderFrontStandardAboutPanel:" target="-1" id="Exp-CZ-Vem"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
+                            <menuItem title="Hide Tester" keyEquivalent="h" id="Olw-nP-bQN">
+                                <connections>
+                                    <action selector="hide:" target="-1" id="PnN-Uc-m68"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Hide Others" keyEquivalent="h" id="Vdr-fp-XzO">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="hideOtherApplications:" target="-1" id="VT4-aY-XCT"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Show All" id="Kd2-mp-pUS">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="unhideAllApplications:" target="-1" id="Dhg-Le-xox"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
+                            <menuItem title="Quit Tester" keyEquivalent="q" id="4sb-4s-VLi">
+                                <connections>
+                                    <action selector="terminate:" target="-1" id="Te7-pn-YzF"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Help" id="wpr-3q-Mcd">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
+                        <items>
+                            <menuItem title="Tester" keyEquivalent="" id="FKE-Sm-Kum">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="showHelp:" target="-1" id="y7X-2Q-9no"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+            </items>
+        </menu>
+        <window title="Tester®" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="QvC-M9-y7g">
+            <windowStyleMask key="styleMask" titled="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" topStrut="YES"/>
+            <rect key="contentRect" x="10" y="300" width="2140" height="1100"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
+                <rect key="frame" x="0.0" y="0.0" width="2140" height="1100"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N8p-4p-bHu" userLabel="Label">
+                        <rect key="frame" x="208" y="10" width="1924" height="1080"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="uVP-2O-uqi">
+                            <font key="font" metaFont="system" size="50"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textFieldCell>
+                    </textField>
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tAK-xI-H6B" userLabel="DrawingView" customClass="DrawingView" customModule="Mapper">
+                        <rect key="frame" x="210" y="10" width="1920" height="1080"/>
+                        <connections>
+                            <outlet property="trapezoid" destination="qIJ-xv-Ia1" id="qdc-l8-W5T"/>
+                            <outlet property="triangle" destination="v2C-aA-etd" id="hk4-hn-LBL"/>
+                        </connections>
+                    </customView>
+                    <button focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qIJ-xv-Ia1">
+                        <rect key="frame" x="14" y="782" width="182" height="90"/>
+                        <buttonCell key="cell" type="square" title="makeRectangle" bezelStyle="shadowlessSquare" alignment="center" state="on" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" sound="Pop" inset="2" id="Jhz-Jq-lPk">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="systemBold" size="20"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="buildTrapezoid:" target="tAK-xI-H6B" id="wRi-WK-jxa"/>
+                        </connections>
+                    </button>
+                    <button focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v2C-aA-etd">
+                        <rect key="frame" x="14" y="666" width="182" height="90"/>
+                        <buttonCell key="cell" type="square" title="makeTriangle" bezelStyle="shadowlessSquare" alignment="center" state="on" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" sound="Pop" inset="2" id="T4u-TH-lAg">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="systemBold" size="20"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="buildTriangle:" target="tAK-xI-H6B" id="1Ri-YE-2yU"/>
+                        </connections>
+                    </button>
+                    <button focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QbI-K8-jth">
+                        <rect key="frame" x="14" y="416" width="182" height="90"/>
+                        <buttonCell key="cell" type="square" title="Delete" bezelStyle="shadowlessSquare" alignment="center" state="on" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" sound="Pop" inset="2" id="EBS-UY-yMg">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="systemBold" size="20"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="automaticallyDeletePath:" target="tAK-xI-H6B" id="97z-Gn-Seg"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <point key="canvasLocation" x="10898" y="163"/>
+        </window>
+    </objects>
+    <resources>
+        <sound name="Pop"/>
+    </resources>
+</document>
