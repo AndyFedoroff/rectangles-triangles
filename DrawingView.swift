@@ -321,6 +321,10 @@ class DrawingView: NSView {
     
     //building a triangle (CCW)
     @IBAction func buildTriangle(sender: AnyObject?) {
+        
+        if squareB > 0 {
+            totalArray.removeAll()
+        }
         appendDot(.vertexOne(point: variableTriangleOne))
         appendDot(.vertexTwo(point: variableTriangleTwo))
         appendDot(.vertexThree(point: variableTriangleThree))
